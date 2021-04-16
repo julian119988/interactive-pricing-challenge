@@ -1,5 +1,8 @@
+import Background from "./Components/Background/Background";
+import "./App.scss";
+
 function App() {
-  return <div>hola mundo</div>;
+  return <Background />;
 }
 
 export default App;
