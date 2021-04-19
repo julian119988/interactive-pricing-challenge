@@ -51,18 +51,23 @@ export default function PricingCard() {
       <div className="upperCard">
         <div className="pricies">
           <h4 className="pageviews">{pageviews} PAGEVIEWS</h4>
-          <div>
-            <h1>${precio}</h1>
-            <h4> / month</h4>
+          <div className="desktopPrice">
+            <h1 className="desktopPrice">${precio}</h1>
+            <h4 className="desktopPrice"> / month</h4>
           </div>
         </div>
         <Slider sliderChange={handleChange} />
+        <div className="mobilePrice">
+          <h1 className="mobilePrice">${precio}</h1>
+          <h4 className="mobilePrice"> / month</h4>
+        </div>
+
         <div className="billing">
           <p>Monthly Billing</p>
           <Switch checkDiscount={checkDiscount} />
           <p>Yearly Billing</p>
           <div className="discount">
-            <h6>25% discount</h6>
+            <h6></h6>
           </div>
         </div>
       </div>

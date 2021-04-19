@@ -13,107 +13,253 @@ $toggle-background: hsl(223, 50%, 87%);
 $text: hsl(225, 20%, 60%);
 $text-CTA-background: hsl(227, 35%, 25%);
 
-.upperCard {
-  width: 100%;
-  height: 29vh;
-  background-color: $pricing-component-background;
-  border-radius: 1vh 1vh 0vh 0vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
+@media (max-width: 950px) {
+  .upperCard {
+    width: 100%;
+    height: 35vh;
+    background-color: $pricing-component-background;
+    border-radius: 1vh 1vh 0vh 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
 
-.container {
-  width: 60vh;
-  border-radius: 1vh;
-  margin-top: 4vh;
-  box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
-}
+  .container {
+    min-width: 87%;
+    border-radius: 1vh;
+    margin-top: 4vh;
+    box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
+  }
 
-.pricies {
-  width: 80%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  div {
-    width: 23vh;
+  .pricies {
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    h4 {
+      font-size: 14px;
+    }
+    div {
+      width: 23vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      h1 {
+        color: $text-CTA-background;
+        font-size: 4vh;
+      }
+    }
+    .pageviews {
+      letter-spacing: 2px;
+      margin: 0;
+    }
+    h4 {
+      color: $text;
+    }
+  }
+  .billing {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 2vh;
+    p {
+      color: $text;
+      margin: 0;
+      font-size: 11px;
+      margin-right: 1vh;
+    }
+    .discount {
+      background-color: $discount-background;
+      width: 5.5vh;
+      height: 3vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2vh;
+      h6 {
+        color: $discount-text;
+        margin: 0px;
+        &::before {
+          content: "-25%";
+        }
+      }
+    }
+  }
+  .lowerCard {
+    width: 100%;
+    height: 25vh;
+    background-color: $pricing-component-background;
+    border-radius: 0vh 0vh 1vh 1vh;
+    border-top: solid 2px #f1f5fe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      color: $text;
+      font-size: 12px;
+      font-weight: 100;
+      margin-bottom: 0.8vh;
+    }
+    button {
+      margin-top: 3vh;
+      width: 20vh;
+      height: 5vh;
+      border-radius: 3vh;
+      border: none;
+      background-color: $text-CTA-background;
+      color: $pricing-component-background;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+  .desktopPrice {
+    display: none !important;
+  }
+  .mobilePrice {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
     h1 {
       color: $text-CTA-background;
       font-size: 4vh;
+      margin-right: 2vh;
+    }
+    h4 {
+      color: $text;
+      font-size: 2vh;
     }
   }
-  .pageviews {
-    letter-spacing: 2px;
-  }
-  h4 {
-    color: $text;
-  }
 }
-.billing {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  width: 80%;
-  margin-bottom: 2vh;
-  p {
-    color: $text;
-    margin: 5px;
-    font-size: 14px;
-  }
-  .discount {
-    background-color: $discount-background;
-    width: 9vh;
-    height: 2vh;
+
+@media (min-width: 950px) {
+  .upperCard {
+    width: 100%;
+    height: 29vh;
+    background-color: $pricing-component-background;
+    border-radius: 1vh 1vh 0vh 0vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 2vh;
-    margin-right: 2vh;
-    margin-left: 1vh;
-    h6 {
-      color: $discount-text;
-      margin: 0px;
+    justify-content: space-around;
+  }
+
+  .container {
+    min-width: 40%;
+    border-radius: 1vh;
+    margin-top: 4vh;
+    box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 2px 10px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .pricies {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      width: 23vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      h1 {
+        color: $text-CTA-background;
+        font-size: 4vh;
+      }
+    }
+    .pageviews {
+      letter-spacing: 2px;
+    }
+    h4 {
+      color: $text;
     }
   }
-}
-.lowerCard {
-  width: 100%;
-  height: 14vh;
-  background-color: $pricing-component-background;
-  border-radius: 0vh 0vh 1vh 1vh;
-  border-top: solid 2px #f1f5fe;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  ul {
-    list-style-type: none;
+  .billing {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 2vh;
+    p {
+      color: $text;
+      margin: 5px;
+      font-size: 14px;
+    }
+    .discount {
+      background-color: $discount-background;
+      width: 9vh;
+      height: 2vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2vh;
+      margin-right: 2vh;
+      margin-left: 1vh;
+      h6 {
+        color: $discount-text;
+        margin: 0px;
+        &::before {
+          content: "25% discount";
+        }
+      }
+    }
   }
-  li {
-    color: $text;
-    margin: 5px;
-    font-size: 14px;
-    font-weight: 100;
+  .lowerCard {
+    width: 100%;
+    height: 14vh;
+    background-color: $pricing-component-background;
+    border-radius: 0vh 0vh 1vh 1vh;
+    border-top: solid 2px #f1f5fe;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      color: $text;
+      margin: 5px;
+      font-size: 14px;
+      font-weight: 100;
+    }
+    button {
+      margin-right: 6vh;
+      width: 20vh;
+      height: 5vh;
+      border-radius: 3vh;
+      border: none;
+      background-color: $text-CTA-background;
+      color: $pricing-component-background;
+      cursor: pointer;
+      outline: none;
+    }
   }
-  button {
-    margin-right: 6vh;
-    width: 20vh;
-    height: 5vh;
-    border-radius: 3vh;
-    border: none;
-    background-color: $text-CTA-background;
-    color: $pricing-component-background;
-    cursor: pointer;
-    outline: none;
+  .mobilePrice {
+    display: none !important;
   }
 }

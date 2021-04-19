@@ -18,14 +18,22 @@ $text-CTA-background: hsl(227, 35%, 25%);
 html,
 body,
 #root {
-  max-height: 100vh;
-  min-width: 100vh;
+  min-height: 100vh;
+  min-width: 100%;
   margin: 0;
 }
 * {
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
-#root {
-  padding: 12vh 20vh 12vh 20vh;
+@media (max-width: 950px) {
+  #root {
+    padding: 0;
+  }
+}
+
+@media (min-width: 950px) {
+  #root {
+    padding: 12vh 20vh 12vh 20vh;
+  }
 }

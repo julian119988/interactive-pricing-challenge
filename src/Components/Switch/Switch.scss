@@ -1,69 +1,152 @@
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 4vh;
-  height: 2vh;
-  margin: 1vh;
+/*Primary colors*/
+$full-slider-bar: hsl(174, 77%, 80%);
+$slider-background: hsl(174, 86%, 45%);
+$discount-background: hsl(14, 92%, 95%);
+$discount-text: hsl(15, 100%, 70%);
+$CTA-text: hsl(226, 100%, 87%);
+
+/*Neutral*/
+$pricing-component-background: hsl(0, 0%, 100%);
+$main-background: hsl(230, 100%, 99%);
+$empty-slider-bar: hsl(224, 65%, 95%);
+$toggle-background: hsl(223, 50%, 87%);
+$text: hsl(225, 20%, 60%);
+$text-CTA-background: hsl(227, 35%, 25%);
+
+@media (max-width: 950px) {
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 5.5vh;
+    height: 3vh;
+    margin-right: 1vh;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .switchSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $toggle-background;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .switchSlider:before {
+    position: absolute;
+    content: "";
+    height: 1.8vh;
+    width: 1.8vh;
+    left: 0.9vh;
+    bottom: calc(3vh / 2 - 0.9vh);
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .switchSlider {
+    background-color: hsl(174, 77%, 80%);
+  }
+
+  input:focus + .switchSlider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .switchSlider:before {
+    -webkit-transform: translateX(2vh);
+    -ms-transform: translateX(2vh);
+    transform: translateX(2vh);
+  }
+
+  /* Rounded sliders */
+  .switchSlider.round {
+    border-radius: 2vh;
+  }
+
+  .switchSlider.round:before {
+    border-radius: 50%;
+  }
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+@media (min-width: 950px) {
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 4vh;
+    height: 2vh;
+    margin: 1vh;
+  }
 
-/* The slider */
-.switchSlider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 
-.switchSlider:before {
-  position: absolute;
-  content: "";
-  height: 1.3vh;
-  width: 1.3vh;
-  left: 0.4vh;
-  bottom: calc(2vh / 2 - 0.65vh);
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
+  /* The slider */
+  .switchSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 
-input:checked + .switchSlider {
-  background-color: hsl(174, 77%, 80%);
-}
+  .switchSlider:before {
+    position: absolute;
+    content: "";
+    height: 1.3vh;
+    width: 1.3vh;
+    left: 0.4vh;
+    bottom: calc(2vh / 2 - 0.65vh);
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
 
-input:focus + .switchSlider {
-  box-shadow: 0 0 1px #2196f3;
-}
+  input:checked + .switchSlider {
+    background-color: hsl(174, 77%, 80%);
+  }
 
-input:checked + .switchSlider:before {
-  -webkit-transform: translateX(
-    calc(4vh - calc((1.3vh + 0.65vh) + (2vh / 2 - 0.65vh)))
-  );
-  -ms-transform: translateX(
-    calc(4vh - calc((1.3vh + 0.65vh) + (2vh / 2 - 0.65vh)))
-  );
-  transform: translateX(
-    calc(4vh - calc((1.3vh + 0.65vh) + (2vh / 2 - 0.65vh)))
-  );
-}
+  input:focus + .switchSlider {
+    box-shadow: 0 0 1px #2196f3;
+  }
 
-/* Rounded sliders */
-.switchSlider.round {
-  border-radius: 2vh;
-}
+  input:checked + .switchSlider:before {
+    -webkit-transform: translateX(
+      calc(4vh - calc((1.3vh + 0.65vh) + (2vh / 2 - 0.65vh)))
+    );
+    -ms-transform: translateX(
+      calc(4vh - calc((1.3vh + 0.65vh) + (2vh / 2 - 0.65vh)))
+    );
+    transform: translateX(
+      calc(4vh - calc((1.3vh + 0.65vh) + (2vh / 2 - 0.65vh)))
+    );
+  }
 
-.switchSlider.round:before {
-  border-radius: 50%;
+  /* Rounded sliders */
+  .switchSlider.round {
+    border-radius: 2vh;
+  }
+
+  .switchSlider.round:before {
+    border-radius: 50%;
+  }
 }
